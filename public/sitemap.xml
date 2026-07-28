@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Only the two pages that are content, not app surface. The other router paths
+  (/import, /transactions, /reports, /categories, /accounts, /settings) render
+  from IndexedDB, so a crawler — which has no data — sees the same empty shell
+  on every one of them. Listing them would submit six near-duplicate URLs.
+
+  No <lastmod>: a hand-written date here goes stale the first time it isn't
+  updated by hand, and Google discards lastmod it finds unreliable. <loc> is
+  the only child the sitemap spec requires.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://privatebudget.org/</loc>
+  </url>
+  <url>
+    <loc>https://privatebudget.org/privacy</loc>
+  </url>
+</urlset>
