@@ -4,11 +4,18 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      This head is also the template for the per-route shells: the build copies
+      the finished index.html once per router path and rewrites the title,
+      description and canonical below (see routeShells() in vite.config.ts), so
+      those three elements must stay present and single-line-parseable.
+    -->
+    <title>PrivateBudget — your money, only on your device</title>
     <meta
       name="description"
-      content="Private, local-first budgeting. Your financial data never leaves your device."
+      content="Private, local-first budgeting. Import your bank statements and see where the money goes — your financial data never leaves your device."
     />
-    <title>PrivateBudget — your money, only on your device</title>
+    <link rel="canonical" href="https://privatebudget.org/" />
     <!--
       A strict Content-Security-Policy is injected into the production build
       (see vite.config.ts). It uses connect-src 'self', so the app can only ever

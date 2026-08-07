@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" />
+
+    <title>Page not found — PrivateBudget</title>
+    <meta name="description" content="That page doesn't exist. Head back to PrivateBudget." />
+    <!-- Cloudflare Pages serves this one file for every unknown path, so it has no canonical
+         URL of its own and must never be indexed. `canonical` points home for the same reason. -->
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href="https://privatebudget.org/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!--
+      Self-contained on purpose, and deliberately zero-JS.
+
+      Zero-JS because the app's Content-Security-Policy (script-src 'self', see vite.config.ts)
+      applies to this file too — an inline script element would simply be blocked and do nothing.
+
+      Self-contained because the app's stylesheet is a hashed bundle whose URL changes every
+      build, and this page answers unknown paths at ANY depth (/typo, /a/b/typo), where a
+      relative asset URL would resolve against the requested path and 404. The palette mirrors
+      the light/dark values in src/index.css — keep the two in sync if the brand colors change.
+    -->
+    <style>
+      :root {
+        --ink: #0f172a;
+        --muted: #64748b;
+        --canvas: #f8fafc;
+        --accent: #0284c7;
+        --on-accent: #f8fafc;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --ink: #f1f5f9;
+          --muted: #94a3b8;
+          --canvas: #020617;
+          --accent: #38bdf8;
+          /* The dark accent is light, so the button flips to dark text to stay readable. */
+          --on-accent: #0f172a;
+        }
+      }
+      html {
+        min-height: 100%;
+        background: var(--canvas);
+        color-scheme: light dark;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1.25rem;
+        font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        color: var(--ink);
+        text-align: center;
+      }
+      main {
+        max-width: 44ch;
+      }
+      img {
+        width: 56px;
+        height: 56px;
+      }
+      .code {
+        margin: 1.25rem 0 0;
+        font-size: 3.25rem;
+        line-height: 1;
+        font-weight: 700;
+        color: var(--accent);
+      }
+      h1 {
+        margin: 0.6rem 0 0;
+        font-size: 1.25rem;
+        font-weight: 600;
+      }
+      p {
+        margin: 0.9rem 0 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+      a {
+        display: inline-block;
+        margin-top: 1.6rem;
+        padding: 0.7rem 1.25rem;
+        border-radius: 999px;
+        background: var(--accent);
+        color: var(--on-accent);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      a:hover {
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="/favicon.svg" width="56" height="56" alt="" />
+      <p class="code">404</p>
+      <h1>Page not found</h1>
+      <p>
+        We couldn't find that page. The link may be outdated, or the address may have a typo in
+        it. Nothing has happened to your data — it's still on your device, where it always was.
+      </p>
+      <a href="/">Back to your budget</a>
+    </main>
+  </body>
+</html>
