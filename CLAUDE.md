@@ -47,6 +47,6 @@ server, it doesn't belong in the core app.
 
 ## Sibling projects
 
-Sibling repos live in `c:\Users\azora\Code\git\`. bible-calc/bible-reference-quiz
+Sibling repos live in `H:\Code\git\`. bible-calc/bible-reference-quiz
 share the PWA + localStorage/offline patterns (though this app is React and
 they are vanilla TS).
